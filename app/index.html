@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" ng-app="Playable">
+<head>
+    <meta charset="utf-8">
+    <title>Playable</title>
+    <link rel="stylesheet" href="css/app.css"/>
+</head>
+<body ng-controller="PlaygroundCtrl">
+    Search: <input ng-model="query">
+    <select ng-model="orderProp">
+        <option value="latitude">Latitude</option>
+        <option value="longitude">Longitude</option>
+        <option value="name">Name</option>
+    </select>
+    <ul>
+        <li ng-repeat="playground in playgrounds | filter:query | orderBy:orderProp">
+            <p>{{playground.name}} | Lat: {{playground.latitude}} | Long: {{playground.longitude}} </p>
+        </li>
+    </ul>
+
+    <script src="lib/angular/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+</body>
+</html>
