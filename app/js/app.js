@@ -1,5 +1,3 @@
 'use strict';
 
-
-// Declare app level module which depends on filters, and services
-angular.module('Playable', ['Playable.controllers']);
+angular.module('Playable', ['ngRoute', 'Playable.controllers', 'Playable.services']);
